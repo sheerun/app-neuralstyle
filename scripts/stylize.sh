@@ -1,6 +1,14 @@
 #!/bin/bash
 
-if [ GPU_COUNT -lt 1 ]; then
+if [ -r /etc/JARVICE/jobinfo.sh ]; then
+    . /etc/JARVICE/jobinfo.sh
+fi
+
+if [ -r /etc/JARVICE/jobenv.sh ]; then
+    . /etc/JARVICE/jobenv.sh
+fi
+
+if [ $GPU_COUNT -lt 1 ]; then
     GPU_ARGS="-gpu -1"
 fi
 
