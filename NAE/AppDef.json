@@ -1,0 +1,58 @@
+{
+    "name": "Neural Style powered by Torch7",
+    "description": "Turn-key Neural Style powered by Torch7 (https://github.com/jcjohnson/neural-style)",
+    "author": "Nimbix",
+    "licensed": true,
+    "classifications": [
+        "Machine Learning"
+    ],
+    "machines": [
+        "n*",
+        "ng*"
+    ],
+    "vault-types": [
+        "FILE",
+        "BLOCK",
+        "BLOCK_ARRAY",
+        "OBJECT"
+    ],
+    "commands": {
+        "batch": {
+            "path": "/usr/local/scripts/neural-style/stylize.sh",
+            "interactive": false,
+            "name": "Stylize",
+            "description": "Launch SSH",
+            "parameters": {
+                "GPU_COUNT": {
+                    "type": "CONST",
+                    "value": "%GPUS%",
+                    "name": "gpu",
+                    "description": "GPU Count",
+		    "variable": true,
+                    "required": false
+                },
+                "style": {
+                    "type": "FILE",
+                    "name": "Style Image",
+                    "description": "Input style image type",
+                    "positional": true,
+                    "required": true,
+                    "filter": "*.png|*.jpg"
+                },
+                "content": {
+                    "type": "FILE",
+                    "name": "Content Image",
+                    "description": "Content image which will be stylized",
+                    "positional": true,
+                    "required": true,
+                    "filter": "*.png|*.jpg"
+                }
+            }
+        }
+    },
+    "image": {
+        "data": "",
+        "type": "image/png"
+    },
+    "scale_max": 1
+}
