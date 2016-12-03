@@ -1,5 +1,7 @@
 #!/bin/bash
 
+. /usr/local/torch/install/bin/torch-activate
+
 # Install loadcaffe
 luarocks install loadcaffe
 luarocks install image
