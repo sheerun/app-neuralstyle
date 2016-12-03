@@ -21,16 +21,8 @@
             "path": "/usr/local/scripts/neural-style/stylize.sh",
             "interactive": false,
             "name": "Stylize",
-            "description": "Launch SSH",
+            "description": "Stylize an image.",
             "parameters": {
-                "GPU_COUNT": {
-                    "type": "CONST",
-                    "value": "%GPUS%",
-                    "name": "gpu",
-                    "description": "GPU Count",
-		    "variable": true,
-                    "required": false
-                },
                 "style": {
                     "type": "FILE",
                     "name": "Style Image",
@@ -46,6 +38,12 @@
                     "positional": true,
                     "required": true,
                     "filter": "*.png|*.jpg"
+                },
+                "gpus": {
+                    "type": "CONST",
+                    "value": "%GPUS%",
+                    "name": "gpus",
+                    "required": true
                 }
             }
         }
