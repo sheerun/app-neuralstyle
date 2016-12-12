@@ -22,4 +22,4 @@ mkdir -p $OUTDIR
 cd /usr/local/neural-style/neural-style
 . /usr/local/torch/install/bin/torch-activate
 
-exec th neural_style.lua  ${GPU_ARGS} -style_image ${STYLE_IMAGE} -content_image ${CONTENT_IMAGE} -output_image "${OUTDIR}/${JOB_NAME}.png"
+exec th neural_style.lua  ${GPU_ARGS} -style_image "${STYLE_IMAGE}" -content_image "${CONTENT_IMAGE}" -output_image "${OUTDIR}/${JOB_NAME}.png"
