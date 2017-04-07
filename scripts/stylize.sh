@@ -38,4 +38,4 @@ th neural_style.lua ${GPU_ARGS} ${EXTRA_ARGS} \
 
 export OUTPUT_URL=$(curl --upload-file "${OUTPUT_PATH}" https://transfer.sh/output.jpg)
 
-echo "FINALRESULT:$OUTPUT_URL"
+echo "FINALRESULT=$OUTPUT_URL"
