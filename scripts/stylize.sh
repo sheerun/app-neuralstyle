@@ -31,7 +31,7 @@ cd /usr/local/neural-style/neural-style
 . /usr/local/torch/install/bin/torch-activate
 
 
-exec th neural_style.lua ${GPU_ARGS} ${EXTRA_ARGS} \
+th neural_style.lua ${GPU_ARGS} ${EXTRA_ARGS} \
   -style_image "${STYLE_PATH}" \
   -content_image "${CONTENT_PATH}" \
   -output_image "${OUTPUT_PATH}"
