@@ -13,6 +13,7 @@
     "n3",
     "ng0",
     "ng1",
+    "ng4",
     "ng5"
   ],
   "vault-types": [
@@ -29,20 +30,18 @@
       "description": "Stylize an image.",
       "parameters": {
         "style": {
-          "type": "FILE",
+          "type": "STR",
           "name": "Style Image",
-          "description": "Input style image type",
+          "description": "URL of style image",
           "positional": true,
-          "required": true,
-          "filter": "*.png|*.jpg"
+          "required": true
         },
         "content": {
-          "type": "FILE",
+          "type": "STR",
           "name": "Content Image",
-          "description": "Content image which will be stylized",
+          "description": "URL of content image",
           "positional": true,
-          "required": true,
-          "filter": "*.png|*.jpg"
+          "required": true
         },
         "gpus": {
           "type": "CONST",
