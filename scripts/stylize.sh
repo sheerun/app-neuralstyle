@@ -20,15 +20,15 @@ fi
 OUTDIR=/data/NeuralStyle
 mkdir -p "$OUTDIR/$JOB_NAME"
 
-curl -o "$OUTDIR/$JOB_NAME/style.jpg" "$STYLE_IMAGE"
-curl -o "$OUTDIR/$JOB_NAME/content.jpg" "$STYLE_IMAGE"
+curl -sLo "$OUTDIR/$JOB_NAME/style.jpg" "$STYLE_IMAGE"
+curl -sLo "$OUTDIR/$JOB_NAME/content.jpg" "$STYLE_IMAGE"
 
 cd /usr/local/neural-style/neural-style
 . /usr/local/torch/install/bin/torch-activate
 
 export OUTPUT_PATH="${OUTDIR}/${JOB_NAME}/output.jpg"
 
-exec th neural_style.lua ${GPU_ARGS} "${EXTRA_ARGS}" \
+exec th neural_style.lua ${GPU_ARGS} ${EXTRA_ARGS} \
   -style_image "${STYLE_IMAGE}" \
   -content_image "${CONTENT_IMAGE}" \
   -output_image "${OUTPUT_PATH}"
