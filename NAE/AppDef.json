@@ -1,6 +1,6 @@
 {
-  "name": "Neural Style powered by Torch7",
-  "description": "Turn-key Neural Style powered by Torch7 (https://github.com/jcjohnson/neural-style)",
+  "name": "sheerun-neural-style",
+  "description": "Neural Style with Torch7",
   "author": "Nimbix",
   "licensed": true,
   "classifications": [
