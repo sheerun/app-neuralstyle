@@ -50,6 +50,13 @@
           "name": "gpus",
           "positional": true,
           "required": true
+        },
+        "args": {
+          "type": "STR",
+          "description": "Extra args passed to neuralstyle",
+          "name": "args",
+          "positional": true,
+          "required": true
         }
       }
     }

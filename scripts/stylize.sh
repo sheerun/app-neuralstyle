@@ -11,6 +11,7 @@ fi
 STYLE_IMAGE="$1"
 CONTENT_IMAGE="$2"
 GPU_COUNT="$3"
+EXTRA_ARGS="$4"
 
 if [ $GPU_COUNT -lt 1 ]; then
     GPU_ARGS="-gpu -1"
@@ -22,4 +23,7 @@ mkdir -p $OUTDIR
 cd /usr/local/neural-style/neural-style
 . /usr/local/torch/install/bin/torch-activate
 
-exec th neural_style.lua  ${GPU_ARGS} -style_image "${STYLE_IMAGE}" -content_image "${CONTENT_IMAGE}" -output_image "${OUTDIR}/${JOB_NAME}.png"
+exec th neural_style.lua ${GPU_ARGS} "${EXTRA_ARGS}" \
+  -style_image "${STYLE_IMAGE}" \
+  -content_image "${CONTENT_IMAGE}" \
+  -output_image "${OUTDIR}/${JOB_NAME}.png" \
