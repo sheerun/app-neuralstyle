@@ -6,6 +6,10 @@ ADD ./scripts/install-neural-style.sh /usr/local/scripts/neural-style/install-ne
 USER nimbix
 RUN /bin/bash /usr/local/scripts/neural-style/install-neural-style.sh
 USER root
+ADD ./scripts/postinstall-neural-style.sh /usr/local/scripts/neural-style/postinstall-neural-style.sh
+USER nimbix
+RUN /bin/bash /usr/local/scripts/neural-style/postinstall-neural-style.sh
+USER root
 ADD ./scripts /usr/local/scripts/neural-style
 USER nimbix
 
